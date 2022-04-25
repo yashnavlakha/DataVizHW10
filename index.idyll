@@ -1,0 +1,65 @@
+[meta title:"IS 445: Assignment 10" description:"Idyll Assignment" /]
+
+[Header
+  fullWidth:true
+  title:"IS 445 Idyll Website"
+  subtitle:"Figuring out Idyll and its components"
+  author:"Yash Navlakha"
+  authorLink:""
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+/]
+
+# BuiltIn Components
+## - Action
+This is regular text, but when you
+ [action onClick:`alert('clicked the text')`]click me[/action],
+an alert will appear.
+
+## - Button
+[var name:"myVar" value:0 /]
+
+[button onClick:`myVar += 1`]Click Me![/button]
+
+Variable value: [Display value:myVar /]
+
+# Vega-lite Plot
+[data name:"ArgentinaCPI" source:"ArgentinaCPI.csv" /]
+
+[IdyllVegaLite data:ArgentinaCPI spec:`{
+  mark: "line",
+  encoding: {
+    x: {
+      field: "time",
+      type: "temporal",
+      axis: {title: "Year", format:"%Y"}
+    },
+    y: {
+      field: "value",
+      type: "quantitative",
+      axis: {title: "CPI"}
+    }
+  }
+}` /]
+
+
+
+Brief Explanation: 
+
+1) Where you got it?
+Ans 1) While searching for a dataset for our final project, I went across many websites in order to find one.
+While I finalized a different dataset for my final project, I decided to choose this for my homework 10.
+
+
+2) What the data is trying to measure?
+Ans 2) The data is trying to measure the consumer price index in Argentina over the last few years.
+
+
+3) What are you trying to show in the plot?
+Ans 3) We are trying to show the CPI for Argentina over the last few years.
+
+4) What marks did you use and why?
+Ans 4) I tried using the line mark. Previously, I decided to choose a scatter mark but upon selecting,
+it did not make much sense. Hence, I decided to go with line so it could show the trend for CPI
+over the years.
